@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Таможенный помощник — консультации по ввозу и вывозу товаров</title>
+  <meta name="description" content="Проверка товаров и документов по таможенным правилам РФ. Бесплатная проверка за 2 минуты в Telegram. Консультация эксперта." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <style>
+    :root{
+      --bg:#0b1220; --card:#111a2e; --muted:#8aa0bf; --text:#eaf2ff; --accent:#00bfa5; --accent-2:#0051a3; --line:#203154;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";background:var(--bg);color:var(--text)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1120px;margin:auto;padding:0 20px}
+    .btn{display:inline-block;padding:14px 18px;border-radius:14px;font-weight:600;line-height:1;transition:transform .06s ease,opacity .2s ease,box-shadow .2s ease}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:linear-gradient(135deg,var(--accent),#00d7c0);color:#002b26;box-shadow:0 8px 28px rgba(0,191,165,.3)}
+    .btn-secondary{background:#183359;color:#cfe3ff;border:1px solid #2a4f8a}
+    .pill{display:inline-block;padding:6px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;color:var(--muted)}
+    header{position:sticky;top:0;background:rgba(11,18,32,.7);backdrop-filter:saturate(150%) blur(10px);z-index:30;border-bottom:1px solid rgba(255,255,255,.04)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo-badge{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent-2),#0a6ad6)}
+    .hero{padding:72px 0 40px;border-bottom:1px solid rgba(255,255,255,.06);background:radial-gradient(1200px 500px at 70% -10%,rgba(0,191,165,.12),transparent)}
+    .grid{display:grid;gap:28px}
+    @media(min-width:900px){.hero .grid{grid-template-columns:1.2fr .8fr}}
+    h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:12px 0 16px}
+    .sub{font-size:clamp(16px,2vw,20px);color:#cfe3ff;opacity:.9}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+    .phone{aspect-ratio:9/16;border-radius:20px;background:linear-gradient(180deg,#0f1a30,#0b1220);border:1px solid #24365d;position:relative;overflow:hidden}
+    .bubble{--c:#183359;position:relative;margin:10px 12px 0 12px;max-width:86%;padding:12px;border-radius:14px;background:var(--c);border:1px solid #2a4f8a;color:#cfe3ff;font-size:14px}
+    .bubble.me{--c:linear-gradient(135deg,var(--accent),#00d7c0);color:#002b26;margin-left:auto;border:0}
+    .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    section{padding:56px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+    h2{font-size:clamp(22px,3vw,32px);margin:0 0 10px}
+    p.lead{color:#cfe3ff;opacity:.9}
+    .features{display:grid;gap:16px}
+    @media(min-width:900px){.features{grid-template-columns:repeat(3,1fr)}}
+    .feature{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+    .feature h3{margin:8px 0 6px;font-size:18px}
+    .muted{color:var(--muted)}
+    .list{display:grid;gap:10px;margin:16px 0}
+    .list .item{display:flex;gap:10px;align-items:flex-start}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+    .pricing{display:grid;gap:16px}
+    @media(min-width:900px){.pricing{grid-template-columns:repeat(3,1fr)}}
+    .plan{background:linear-gradient(180deg,#0f1a30,#0b1220);border:1px solid #223b6a;border-radius:18px;padding:18px}
+    .price{font-size:28px;font-weight:800;margin:8px 0}
+    .footer{padding:36px 0;color:#a9bfdc}
+    .faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+    .faq details+details{margin-top:10px}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Гарантируете ли прохождение таможни?","acceptedAnswer":{"@type":"Answer","text":"Нет. Мы консультируем и даём рекомендации, но решение принимает таможенный орган."}},
+      {"@type":"Question","name":"Информация актуальна?","acceptedAnswer":{"@type":"Answer","text":"Да, мы обновляем базу при изменениях законодательства и практики."}},
+      {"@type":"Question","name":"Нужно ли что-то кроме Telegram?","acceptedAnswer":{"@type":"Answer","text":"Нет, сервис работает прямо в чате Telegram."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <div class="logo-badge" aria-hidden="true"></div>
+        <strong>Таможенный помощник</strong>
+      </div>
+      <nav>
+        <a href="#features" class="pill">Как работает</a>
+        <a href="#pricing" class="pill" style="margin-left:8px">Тарифы</a>
+        <a href="#faq" class="pill" style="margin-left:8px">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container grid">
+        <div>
+          <span class="pill">Создан экспертами по таможенному праву</span>
+          <h1>Сложные таможенные правила — простыми словами</h1>
+          <p class="sub">Узнайте, можно ли ввозить товар, какие документы нужны и как избежать штрафов. Бесплатная проверка за 2 минуты в Telegram.</p>
+          <div class="cta">
+            <a class="btn btn-primary" href="https://t.me/yourbotlink" target="_blank" rel="noopener">Запустить бота в Telegram</a>
+            <a class="btn btn-secondary" href="#pricing">Получить консультацию эксперта</a>
+          </div>
+          <div class="tagrow">
+            <span class="pill">Проверка лимитов</span>
+            <span class="pill">Расчёт пошлин</span>
+            <span class="pill">Чек‑лист документов</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="phone" aria-label="демо диалога бота">
+            <div class="bubble">Здравствуйте! Разберёмся с вашим товаром за 2 минуты.</div>
+            <div class="bubble">Выберите формат: посылка, багаж, авто или питомцы.</div>
+            <div class="bubble me">Посылка. Смарт-часы, 320 USD, из Корея.</div>
+            <div class="bubble">Предварительно: декларирование не требуется, документы: инвойс/чек. Подробнее — в консультации.</div>
+            <div class="bubble me">Окей, хочу консультацию.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM / VALUE -->
+    <section id="value">
+      <div class="container">
+        <h2>Почему важно проверить правила заранее</h2>
+        <p class="lead">Незнание норм — частая причина штрафов, задержек и изъятий. Сервис подскажет, что можно ввозить, что запрещено и какие документы понадобятся.</p>
+        <div class="features">
+          <div class="feature">
+            <h3>Актуальные нормы</h3>
+            <p class="muted">Сводим правила из множества документов в понятные инструкции.</p>
+          </div>
+          <div class="feature">
+            <h3>Простым языком</h3>
+            <p class="muted">Без сложных терминов — только то, что нужно знать перед поездкой.</p>
+          </div>
+          <div class="feature">
+            <h3>Экономия денег и времени</h3>
+            <p class="muted">Помогаем избежать лишних платежей и задержек на контроле.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS / FEATURES -->
+    <section id="features">
+      <div class="container">
+        <h2>Как работает сервис</h2>
+        <div class="list">
+          <div class="item"><span class="dot"></span><div>Запускаете бота в Telegram и выбираете формат: посылка, багаж, авто, питомцы.</div></div>
+          <div class="item"><span class="dot"></span><div>Отправляете краткие данные о товаре: страна, стоимость, вес.</div></div>
+          <div class="item"><span class="dot"></span><div>Получаете предварительную подсказку и список документов.</div></div>
+          <div class="item"><span class="dot"></span><div>При необходимости подключается эксперт: даёт рекомендации и сопровождение.</div></div>
+        </div>
+        <div class="cta" style="margin-top:16px">
+          <a class="btn btn-primary" href="https://t.me/yourbotlink" target="_blank" rel="noopener">Начать бесплатно</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREATOR / TRUST -->
+    <section id="trust">
+      <div class="container">
+        <h2>Опыт и доверие</h2>
+        <p class="lead">Сервис создан специалистами с многолетним опытом работы в таможенных органах и сфере таможенного оформления. Мы объясняем правила простым языком и опираемся на практику.</p>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="container">
+        <h2>Тарифы</h2>
+        <div class="pricing">
+          <div class="plan">
+            <div class="pill">Старт</div>
+            <div class="price">0 ₽</div>
+            <p class="muted">Проверка по товару и стране в боте</p>
+            <a class="btn btn-secondary" href="https://t.me/yourbotlink" target="_blank" rel="noopener">Запустить бота</a>
+          </div>
+          <div class="plan">
+            <div class="pill">Консультация</div>
+            <div class="price">от 1 990 ₽</div>
+            <p class="muted">Ответ эксперта в Telegram, пояснения и документы</p>
+            <a class="btn btn-secondary" href="#contact">Оставить заявку</a>
+          </div>
+          <div class="plan">
+            <div class="pill">Сопровождение</div>
+            <div class="price">от 4 900 ₽</div>
+            <p class="muted">Подготовка документов и поддержка до выпуска</p>
+            <a class="btn btn-secondary" href="#contact">Оставить заявку</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container faq">
+        <h2>FAQ</h2>
+        <details>
+          <summary>Гарантируете ли прохождение таможни?</summary>
+          <p class="muted">Нет. Мы консультируем и даём рекомендации, но решение принимает таможенный орган.</p>
+        </details>
+        <details>
+          <summary>Информация актуальна?</summary>
+          <p class="muted">Да, мы обновляем базу при изменениях законодательства и практики.</p>
+        </details>
+        <details>
+          <summary>Нужно ли что-то кроме Telegram?</summary>
+          <p class="muted">Нет, сервис работает прямо в чате Telegram.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <h2>Связаться с нами</h2>
+        <p class="lead">Задайте вопрос в Telegram или оставьте заявку — ответим в рабочее время.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://t.me/yourbotlink" target="_blank" rel="noopener">Написать в Telegram</a>
+          <a class="btn btn-secondary" href="mailto:support@tamozh-helper.ru">support@tamozh-helper.ru</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center">
+      <small>© <span id="y"></span> Таможенный помощник</small>
+      <nav style="display:flex;gap:12px">
+        <a href="#" class="pill">Публичная оферта</a>
+        <a href="#" class="pill">Политика конфиденциальности</a>
+        <a href="#" class="pill">Согласие на ПДн</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
